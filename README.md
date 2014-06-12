@@ -1,36 +1,75 @@
-# <a name="title"></a> Kitchen::Azure
+# <a name="title"></a> Kitchen::Msazure
 
-A Test Kitchen Driver for Azure.
+A Test Kitchen Driver for Microsoft Azure.
 
 ## <a name="requirements"></a> Requirements
 
-**TODO:** document any software or library prerequisites that are required to
-use this driver. Implement the `#verify_dependencies` method in your Driver
-class to enforce these requirements in code, if possible.
+* A Microsoft Azure account
+* An Azure subscription
+* A `.publishsettings` file with the subscription definition and 
+management certificate
 
 ## <a name="installation"></a> Installation and Setup
+
+The most basic configuration required is show below. Specify this in the 
+.kitchen.yml file
+
+```yaml
+driver:
+  name: msazure
+  subscription: "SubscriptionName"
+  publish_settings_file: "/path/to/publishsettings"
+  storage_account: "StorageAccountName"
+```
+
+Platforms currently supported:
+
+```yaml
+platforms:
+  - name: centos-6.3
+  - name: centos-6.4
+  - name: centos-6.5
+  - name: ubuntu-12.04
+  - name: ubuntu-13.10
+  - name: ubuntu-14.04
+``` 
 
 Please read the [Driver usage][driver_usage] page for more details.
 
 ## <a name="config"></a> Configuration
 
-**TODO:** Write descriptions of all configuration options
+Below is a list of the configuration options, their obligatoriness and defaults
 
-### <a name="config-require-chef-omnibus"></a> require\_chef\_omnibus
+* ### <a name="config-pub-settings"></a> publish_settings_file
+**Required** Path to publish settings file
+  Either specify as an environment variable `PUBLISH_SETTINGS_FILE=/path/to/file`
+or in the .kitchen.yml file
 
-Determines whether or not a Chef [Omnibus package][chef_omnibus_dl] will be
-installed. There are several different behaviors available:
+* ### <a name="config-subscription"></a> subscription
+**Required** Name of Azure subscription
+  Either specify as an environment variable `SUBSCRIPTION=SubscriptionName`
+or in the .kitchen.yml file
 
-* `true` - the latest release will be installed. Subsequent converges
-  will skip re-installing if chef is present.
-* `latest` - the latest release will be installed. Subsequent converges
-  will always re-install even if chef is present.
-* `<VERSION_STRING>` (ex: `10.24.0`) - the desired version string will
-  be passed the the install.sh script. Subsequent converges will skip if
-  the installed version and the desired version match.
-* `false` or `nil` - no chef is installed.
+* ### <a name="config-subscription"></a> storage_account
+**Required** Name of the storage account to use
+  Either specify as an environment variable `STORAGE_ACCOUNT=StorageAccountName`
+or in the .kitchen.yml file
 
-The default value is unset, or `nil`.
+* ### <a name="config-ssh"></a> port
+The SSH port to use
+  **Default:** 2222
+
+* ### <a name="config-username"></a> username
+The VM username to use
+  **Default:** azureuser
+
+* ### <a name="config-location"></a> location
+The Azure datacenter location to use
+  **Default:** East US
+
+* ### <a name="config-size"></a> size
+The size of the VM to create
+  **Default:** small
 
 ## <a name="development"></a> Development
 
@@ -49,16 +88,16 @@ example:
 
 ## <a name="authors"></a> Authors
 
-Created and maintained by [Grant Ellis][author] (<grant.ellis@mnscorp.net>)
+Created and maintained by [Grant Ellis][author] (<grant.ellis@marks-and-spencer.com>)
 
 ## <a name="license"></a> License
 
 Apache 2.0 (see [LICENSE][license])
 
 
-[author]:           https://github.com/enter-github-user
-[issues]:           https://github.com/enter-github-user/kitchen-azure/issues
-[license]:          https://github.com/enter-github-user/kitchen-azure/blob/master/LICENSE
-[repo]:             https://github.com/enter-github-user/kitchen-azure
+[author]:           https://github.com/DigitalInnovation
+[issues]:           https://github.com/DigitalInnovation/kitchen-msazure/issues
+[license]:          https://github.com/DigitalInnovation/kitchen-msazure/blob/master/LICENSE
+[repo]:             https://github.com/DigitalInnovation/kitchen-msazure
 [driver_usage]:     http://docs.kitchen-ci.org/drivers/usage
 [chef_omnibus_dl]:  http://www.getchef.com/chef/install/
