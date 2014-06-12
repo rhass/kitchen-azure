@@ -31,7 +31,7 @@ module Kitchen
     # @author Grant Ellis <grant.ellis@marks-and-spencer.com>
     class Azure < Kitchen::Driver::SSHBase
 
-	  AZURE_MANAGEMENT_ENDPOINT='https://management.core.windows.net'
+      AZURE_MANAGEMENT_ENDPOINT='https://management.core.windows.net'
       default_config :port, 2222
       default_config :username, 'azureuser'
       default_config :location, 'East US'
@@ -144,7 +144,7 @@ module Kitchen
         ::Azure.configure do |c|
           c.management_certificate = cert_file
           c.subscription_id = sub_id
-		  c.management_endpoint = AZURE_MANAGEMENT_ENDPOINT
+          c.management_endpoint = AZURE_MANAGEMENT_ENDPOINT
         end
       end
 
