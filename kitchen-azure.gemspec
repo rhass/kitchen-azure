@@ -5,7 +5,7 @@ require 'kitchen/driver/azure_version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'kitchen-azure'
-  spec.version       = Kitchen::Driver::MSAZURE_VERSION
+  spec.version       = Kitchen::Driver::AZURE_VERSION
   spec.authors       = ['Grant Ellis']
   spec.email         = ['grant.ellis@marks-and-spencer.com']
   spec.description   = %q{A Test Kitchen Driver for Microsoft Azure}

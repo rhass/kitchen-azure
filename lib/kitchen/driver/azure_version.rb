@@ -21,6 +21,6 @@ module Kitchen
   module Driver
 
     # Version string for Msazure Kitchen driver
-    MSAZURE_VERSION = "0.1.0"
+    AZURE_VERSION = "0.1.0"
   end
 end
