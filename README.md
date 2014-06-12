@@ -1,5 +1,7 @@
 # <a name="title"></a> Kitchen::Azure
 
+[![Build Status](https://travis-ci.org/DigitalInnovation/kitchen-azure.png)](https://travis-ci.org/DigitalInnovation/kitchen-azure)
+
 A Test Kitchen Driver for Microsoft Azure.
 
 ## <a name="requirements"></a> Requirements
@@ -11,7 +13,7 @@ management certificate
 
 ## <a name="installation"></a> Installation and Setup
 
-The most basic configuration required is show below. Specify this in the 
+The most basic configuration required is shown below. Specify this in the 
 .kitchen.yml file
 
 ```yaml
