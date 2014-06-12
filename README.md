@@ -16,7 +16,7 @@ The most basic configuration required is show below. Specify this in the
 
 ```yaml
 driver:
-  name: msazure
+  name: azure
   subscription: "SubscriptionName"
   publish_settings_file: "/path/to/publishsettings"
   storage_account: "StorageAccountName"
@@ -96,8 +96,8 @@ Apache 2.0 (see [LICENSE][license])
 
 
 [author]:           https://github.com/DigitalInnovation
-[issues]:           https://github.com/DigitalInnovation/kitchen-msazure/issues
-[license]:          https://github.com/DigitalInnovation/kitchen-msazure/blob/master/LICENSE
-[repo]:             https://github.com/DigitalInnovation/kitchen-msazure
+[issues]:           https://github.com/DigitalInnovation/kitchen-azure/issues
+[license]:          https://github.com/DigitalInnovation/kitchen-azure/blob/master/LICENSE
+[repo]:             https://github.com/DigitalInnovation/kitchen-azure
 [driver_usage]:     http://docs.kitchen-ci.org/drivers/usage
 [chef_omnibus_dl]:  http://www.getchef.com/chef/install/

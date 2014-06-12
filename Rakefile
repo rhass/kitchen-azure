@@ -15,7 +15,11 @@ task :stats do
   sh "countloc -r lib"
 end
 
-desc "Run all quality tasks"
-task :quality => [:cane, :tailor, :stats]
+task :build do
+  sh "gem build kitchen-azure.gemspec"
+end
 
-task :default => [:quality]
+desc "Run all quality tasks"
+task :quality => [:stats]
+
+task :default => [:quality, :build]
