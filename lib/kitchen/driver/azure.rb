@@ -144,7 +144,7 @@ module Kitchen
         ::Azure.configure do |c|
           c.management_certificate = cert_file
           c.subscription_id = sub_id
-		  c.management_endpoint = AZURE_MANAGEMENT_ENDPOINT
+          c.management_endpoint = AZURE_MANAGEMENT_ENDPOINT
         end
       end
 
