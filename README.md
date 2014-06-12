@@ -16,7 +16,7 @@ management certificate
 The most basic configuration required is shown below. Specify this in the 
 .kitchen.yml file
 
-```yaml
+```ruby
 driver:
   name: azure
   subscription: "SubscriptionName"
@@ -26,7 +26,7 @@ driver:
 
 Platforms currently supported:
 
-```yaml
+```ruby
 platforms:
   - name: centos-6.3
   - name: centos-6.4
