@@ -1,4 +1,4 @@
-# <a name="title"></a> Kitchen::Msazure
+# <a name="title"></a> Kitchen::Azure
 
 A Test Kitchen Driver for Microsoft Azure.
 
