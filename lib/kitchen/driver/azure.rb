@@ -124,7 +124,7 @@ module Kitchen
 
         begin
           settings = Nokogiri::XML(File.open(config[:publish_settings_file]))
-		  sub_data = settings.xpath("//Subscription").find{ |s| s.attributes['Name'].value == config[:subscription]}
+          sub_data = settings.xpath("//Subscription").find{ |s| s.attributes['Name'].value == config[:subscription]}
           raise "Couldn't find subscription" unless sub_data
           cert = sub_data['ManagementCertificate']
           raise "Couldn't parse certificate" unless cert
