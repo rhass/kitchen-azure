@@ -21,8 +21,22 @@ require 'securerandom'
 require 'openssl'
 require 'nokogiri'
 require 'kitchen'
+require 'kitchen/transport/ssh'
 
 module Kitchen
+
+  module Transport
+    class Connection < Kitchen::Transport::Base::Connection
+      # Redefine login_command for use with putty
+      def login_command
+         super
+
+         args = %W[ #{username}@#{hostname} ]
+
+         LoginCommand.new("putty", args)
+      end
+    end
+  end
 
   module Driver
 
